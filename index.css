@@ -85,18 +85,21 @@ body {
 
 /* Image Section */
 .card-img {
-    height: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    height: 270px;
+    display: flex; /* Kept for centering icon, but object-position handles image */
+    align-items: center; /* Kept for centering icon */
+    justify-content: center; /* Kept for centering icon */
     border-bottom: 1px solid rgba(0, 0, 0, 0.04);
     background: var(--background-color);
+    overflow: hidden; /* Ensure anything overflowing the container is hidden */
 }
 
 .card-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    /* --- MODIFIED LINE BELOW --- */
+    object-position: top; /* This makes the image align to the top, hiding the bottom if it overflows */
 }
 
 /* Icon within Image Section */
